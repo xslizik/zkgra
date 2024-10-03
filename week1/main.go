@@ -42,22 +42,27 @@ func cypher(text string, limitedAlphabetMap map[rune]rune) string {
 	return result.String()
 }
 
-func main() {
-	var text string
-	var limit int
+func bruteDecipher(input string) {
+	for i := 0; i < 26; i++ {
+		fmt.Printf("limit %d: %s\n", i, cypher(input, createLimitedAlphabetMap(i)))
+	}
+}
 
-	flag.StringVar(&text, "t", "Slizik", "text to cypher use quotation marks for sentences")
-	flag.IntVar(&limit, "l", 26, "limit to split the alphabet")
+func main() {
+	text := flag.String("t", "Slizik", "text to cypher use quotation marks for sentences")
+	limit := flag.Int("l", 26, "limit to split the alphabet")
 	flag.Parse()
 
-	if limit > 26 || limit < 0 {
+	if *limit > 26 || *limit < -1 {
 		fmt.Println("Error: limitIndex cannot be greater than 26")
 		os.Exit(1)
 	}
 
-	limitedAlphabetMap := createLimitedAlphabetMap(limit)
-
-	cipheredText := cypher(text, limitedAlphabetMap)
-
-	fmt.Printf("%s\n", cipheredText)
+	if *limit == -1 {
+		bruteDecipher(*text)
+	} else {
+		limitedAlphabetMap := createLimitedAlphabetMap(*limit)
+		cipheredText := cypher(*text, limitedAlphabetMap)
+		fmt.Printf("%s\n", cipheredText)
+	}
 }
