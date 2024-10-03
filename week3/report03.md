@@ -24,7 +24,7 @@ In the final version, I modified it so I don't print so much that the program is
 Possible improvements could include the addition of multithreading. It would also be beneficial to avoid creating the hashmap each time during brute-forcing, optimizing memory usage and execution speed.
 
 ### Bonus
-XOR, also known as XOR, can be easily used in encryption. Let's take the plaintext `"Slizik"` and convert every letter to ASCII integers, then to binary.
+XOP, also known as XOR, can be easily used in encryption. Let's take the plaintext `"Slizik"` and convert every letter to ASCII integers, then to binary.
 
 **Plaintext:**
 
