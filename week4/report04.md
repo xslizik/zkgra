@@ -59,16 +59,19 @@ H = \log_2(N)
 $$
 
 1) eight states;
+
 $$
 H = \log_2​(8) = 3
 $$
 
 2) 128 states;
+
 $$
 H = \log2_​(128) = 7
 $$
 
 3) 256 states.
+
 $$
 H = \log2_​(256) = 8
 $$
