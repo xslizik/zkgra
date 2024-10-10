@@ -14,7 +14,7 @@ func xorEncryptDecrypt(text, key string) []byte {
 }
 
 func main() {
-	plaintext := flag.String("t", "Slizik", "text to cypher")
+	plaintext := flag.String("t", "Slizik", "text to cipher")
 	key := flag.String("k", "key", "key used")
 	flag.Parse()
 

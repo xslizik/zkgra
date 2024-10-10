@@ -27,7 +27,7 @@ func createLimitedAlphabetMap(limitIndex int) map[rune]rune {
 	return mapping
 }
 
-func cypher(text string, limitedAlphabetMap map[rune]rune) string {
+func cipher(text string, limitedAlphabetMap map[rune]rune) string {
 	var result strings.Builder
 
 	for _, char := range text {
@@ -63,7 +63,7 @@ func decipher(text string, shift int) string {
 func bruteDecipher(input string) {
 	limitResults := make([]string, 0)
 	for limit := 0; limit < 26; limit++ {
-		limitResults = append(limitResults, fmt.Sprintf("%s", cypher(input, createLimitedAlphabetMap(limit))))
+		limitResults = append(limitResults, fmt.Sprintf("%s", cipher(input, createLimitedAlphabetMap(limit))))
 	}
 
 	shiftResults := make([]string, 0)
@@ -76,7 +76,7 @@ func bruteDecipher(input string) {
 }
 
 func main() {
-	input := flag.String("t", "Lebsbd", "text to cypher use quotation marks for sentences")
+	input := flag.String("t", "Lebsbd", "text to cipher use quotation marks for sentences")
 	flag.Parse()
 
 	bruteDecipher(*input)
