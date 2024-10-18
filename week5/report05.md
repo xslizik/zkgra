@@ -4,32 +4,37 @@ chosen functions:
 The secret keys for the transmitter and receiver: 6 and 3. 
 
 ```
-A = 6, B = 3
-2^x(mod 4)
-a = 2^6 (mod 4) = 0  
-b = 2^3 (mod 4) = 0
-b^A (mod 4) = 0^6 (mod 4) = 0
-a^B (mod 4) = 0^3 (mod 4) = 0
-The secret key will be 0    
+private key A = 6, private key B = 3
+both parties agree on large coprimes p,g
 
-78^x(mod 33).
-a = 78 ^ 6 (mod 33) = 12
-b = 78 ^ 3 (mod 33) = 12
-b^A (mod 33) = 12^6 (mod 33) = 12 
-a^B (mod 33) = 12^3 (mod 33) = 12
-The secret key will be 12
+2^x (mod 4)
+g = 2  (generator)
+p = 4  (modulator)
+
+a = g^A (mod p) = 2^6 (mod 4) = 0  
+b = g^B (mod p) = 2^3 (mod 4) = 0
+public key a = 0 public key b = 0
+
+
+s = b^A (mod p) = 0^6 (mod 4) = 0
+s = a^B (mod p) = 0^3 (mod 4) = 0
+shared secret is 0    
+
+78^x (mod 33)
+g = 78 (generator)
+p = 4  (modulator)
+
+a = g^A (mod p) = 78^6 (mod 33) = 12
+b = g^B (mod p) = 78^3 (mod 33) = 12
+
+s = b^A (mod p) = 12^6 (mod 33) = 12 
+s = a^B (mod p) = 12^3 (mod 33) = 12
+shared secret is 12
 ```
 
 2. Answer the question: is it possible to use the function 2^-1(mod 6) as a common functions and justify your answer.
 
-No it is not, 2 and 6 are not coprime they share common prime factor 2, and their modular inverse does not exist.
-```
-A = 6, B = 3
-2^x mod 6
-a = 2^6 mod 6 = 4
-b = 2^3 mod 6 = 2
-The secret key cannot be calculated
-```
+No it is not, 2 and 6 are not coprime they share common prime factor 2, and thus their modular inverse surely does not exist, and we cannot rely on using them.
 
 ## Exercise 2,3
 Find prime roots modulo for the function y= a^x mod n:
@@ -48,7 +53,7 @@ a=6,y=6
 ```
 Indicate which of these values of a,x are suitable for use in coding algorithms.
 
-For excercise 2,3 I created a simple program, that visualizes the mappings table, and determines the value of x to given corresponding to the combinations. It is as simple as calculating a function for given values of x and a from 1 to n-1. As for the second part it is best to find a row of a given a and loop through values of y to find x.
+For excercise 2,3 I created a simple program, that visualizes the mappings table, and determines the value of x to given corresponding to the combinations. It is as simple as calculating a function for given values of x and a from 1 to n-1 during the creation of table unique values that are coprime with n are stored. As for the second part it is best to find a row of a given a and loop through values of y to find x.
 
 ![](../assets/5-1.png)
 
@@ -79,19 +84,20 @@ since they don't share prime numbers their greatest common denominator is 1
 2. extended euclidean algorithm 
 
 ```
-34 mod 27 
-a mod m 
-34 mod 27 = 7
+34 (mod 27) 
+a (mod m) 
+34 (mod 27) = 7
 a = 7
 m = 27
 
-ab = 1 mod m
-7*b = 1 mod 27 
+a*b = 1 (mod m)
+7*b = 1 (mod 27) 
+
 b = 1..27-1
-1 -> 7 mod 27
-2 -> 14 mod 27
-3 -> 21 mod 27
-4 -> 28 mod 27 = 1
+1 -> 7  (mod 27) = 7
+2 -> 14 (mod 27) = 14
+3 -> 21 (mod 27) = 21
+4 -> 28 (mod 27) = 1
 ...
 ```
 

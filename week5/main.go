@@ -4,24 +4,45 @@ import (
 	"flag"
 	"fmt"
 	"math"
+	"sort"
 )
+
+func gcd(a, b int) int {
+	for b != 0 {
+		a, b = b, a%b
+	}
+	return a
+}
 
 // Function to calculate (a^x) % n
 func modExp(a, x, n int) int {
 	return int(math.Pow(float64(a), float64(x))) % n
 }
 
-func generateTable(n int) [][]int {
+func generateTable(n int) ([][]int, []int) {
 	// The table will have n-1 rows and n-1 columns
 	table := make([][]int, n-1)
+	uniqueValues := make(map[int]struct{})
+
 	for a := 1; a < n; a++ {
 		table[a-1] = make([]int, n-1)
 		for x := 1; x < n; x++ {
-			table[a-1][x-1] = modExp(a, x, n)
+			value := modExp(a, x, n)
+			table[a-1][x-1] = value
+			if gcd(value, n) == 1 {
+				uniqueValues[value] = struct{}{} // Store unique coprime value
+			}
 		}
 	}
 
-	return table
+	// Extract and sort unique coprime values
+	var sortedUniqueValues []int
+	for value := range uniqueValues {
+		sortedUniqueValues = append(sortedUniqueValues, value)
+	}
+	sort.Ints(sortedUniqueValues)
+
+	return table, sortedUniqueValues
 }
 
 func printTable(n int, table [][]int) {
@@ -73,9 +94,10 @@ func main() {
 	y := flag.Int("y", 0, "y")
 	flag.Parse()
 
-	table := generateTable(*n)
+	table, unique := generateTable(*n)
 	if !*s {
 		printTable(*n, table)
+		fmt.Printf("%v", unique)
 	}
 
 	if *a > 0 && *y > 0 {
