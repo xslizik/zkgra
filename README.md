@@ -7,5 +7,5 @@ A collection of cryptography programs written in [Go](https://go.dev/doc/install
 - [Brute Forcing](./week3/report03.md)
 - [XOR Ciphers](./week4/report04.md)
 - [Secret Key Generation](./week5/report05.md)
-- [Feistel Grid](./week6/report06.md)
+- [DES - Feistel Grid](./week6/report06.md)
 
