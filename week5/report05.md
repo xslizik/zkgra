@@ -81,7 +81,7 @@ represent 27 as prime numbers
 since they don't share prime numbers their greatest common denominator is 1
 ```
 
-2. extended euclidean algorithm 
+2. naive or extended euclidean algorithm 
 
 ```
 34 (mod 27) 
