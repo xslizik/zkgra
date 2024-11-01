@@ -75,7 +75,7 @@ Inverse Substitution Table
 | 00   | 01   | 02   | 03   |
 | 10   | 11   | 12   | 13   |
 | 20   | 21   | 22   | 23   |
-| 30   | 32   | 32   | 33   |
+| 30   | 31   | 32   | 33   |
 
 ![](../assets/7-4.png)
 
@@ -129,7 +129,7 @@ x^3 - x^2 + 1
 meaning that x^2 + x is the modulo => answer is 110 = 6
 ```
 
-3. if we are in a field of 0-7 than answer is
+3. if we are in a field consisting of elemets of 0-7 than the answer is
 ```
 5 * 7 mod 8 = 3
 ```
