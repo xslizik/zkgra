@@ -2,6 +2,7 @@
 ### Perform SunBytes transformations.
 1. Assignment condition: Encode message M using the Rijndael encryption table. Use your name as message M, writing it in hexadecimal format (HER) using the ASCII code table. Replace each byte of the data array using the Rijndael encryption table.
 
+Encryption using Forward Substitution Table
 ```
 M = slizik = 73 6C 69 7A 69 6B
 E = 8F 50 F9 DA F9 7F
@@ -75,6 +76,8 @@ Inverse Substitution Table
 | 10   | 11   | 12   | 13   |
 | 20   | 21   | 22   | 23   |
 | 30   | 32   | 32   | 33   |
+
+![](../assets/7-4.png)
 
 ### 5. Form a table of byte order in the encryption key if the length of the encryption key is 160 bytes.
 
