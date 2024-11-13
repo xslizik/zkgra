@@ -9,7 +9,7 @@
 ### Example
 - **Input**: "Slizik"
 - **Shift Calculation**: 'S' -> 19.
-- **Ciphertext**: "Lefsbv"
+- **Ciphertext**: "Lebsbd"
 
 ### Performance
 The algorithm runs in O(n) time, where n is the input length, making processing time negligible.
