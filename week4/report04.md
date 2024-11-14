@@ -61,7 +61,7 @@ $$
 1) eight states;
 
 $$
-H = \log_2​(8) = 3
+H = \log2_​(8) = 3
 $$
 
 2) 128 states;
