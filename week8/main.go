@@ -64,6 +64,7 @@ func main() {
 	encryptPrivate := flag.Bool("ep", false, "Use public key for encryption (default: false)")
 	p := flag.Int("p", 9, "Prime number p")
 	q := flag.Int("q", 11, "Prime number q")
+	maxJ := flag.Int("j", 1000, "Maximum j for finding d")
 
 	flag.Parse()
 
@@ -76,7 +77,7 @@ func main() {
 	var finalTransformedNumbers []int
 	var finalChars []rune
 
-	e, d := findFiCoprimes(fi, 1000)
+	e, d := findFiCoprimes(fi, *maxJ)
 	if e == 0 || d == 0 {
 		fmt.Println("Failed to find suitable values for e and d")
 		return
