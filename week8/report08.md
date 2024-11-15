@@ -21,28 +21,27 @@ fi(n) = 4 x 6
 fi(n) = 24
 
 e random number coprime with fi(n)
-1 < e < fi(n) - 1
-the thing is that there is no such e that would have different d for this excercise, but I will take it nonetheless
+1 < e < fi(n)
 e = 5
 
 e x d = 1 mod fi(n)
 5 x d = 1 mod 24
 A^-1 = (1+24*j)/5
 
-j = 1..24-1
+find first j for which the result is int, and != e 
 ...
-1 -> (1 + 24*1)/5 = 5
+6 -> (1 + 24*6)/5 = 29
 
 (e,n) - public key 
 (5,35)
 (d,n) - private key
-(5,35)
+(29,35)
 
 bratislava
 2 18 1 20 9 19 12 1 22 1
 
 Encryption (d,n):
-2^5 mod 35 = 32
+2^29 mod 35 = 32
 ...
 
 Decryption (e,n)
@@ -73,7 +72,7 @@ fi(n) = 8 x 10
 fi(n) = 80
 
 e random number coprime with fi(n)
-1 < e < fi(n) - 1
+1 < e < fi(n)
 Here we take into account only e != d
 e = 77
 
@@ -81,7 +80,7 @@ e x d = 1 mod fi(n)
 77 x d = 1 mod 80
 A^-1 = (1+80*j)/77
 
-j = 1..80-1
+find first j for which the result is int, and != e 
 ...
 1 -> (1 + 80*51)/77 = 53
 
@@ -108,7 +107,7 @@ Decryption (d,n)
 
 3.1 Write out all possible public keys when the numbers p = 7 and q = 11 as random numbers for the RSA algorithm.
 
-Let's take into account only e != d cases.
+Let's take into account only e != d cases. Results can vary based on max_j parameter, for Task 3 I set max_j to fi(n).
 
 ![](../assets/8-3.png)
 

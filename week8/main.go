@@ -49,8 +49,8 @@ func findFiCoprimes(fi, maxJ int) (int, int) {
 						fmt.Printf("e=%d d=%d j=%d\n", e, d, j)
 						e_out = e
 						d_out = d
+						break
 					}
-					break
 				}
 			}
 		}
@@ -64,7 +64,7 @@ func main() {
 	encryptPrivate := flag.Bool("ep", false, "Use public key for encryption (default: false)")
 	p := flag.Int("p", 9, "Prime number p")
 	q := flag.Int("q", 11, "Prime number q")
-	maxJ := flag.Int("j", 1000, "Maximum j for finding d")
+	maxJ := flag.Int("j", 80, "Maximum j for finding d")
 
 	flag.Parse()
 
