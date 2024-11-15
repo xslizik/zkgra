@@ -73,7 +73,7 @@ fi(n) = 8 x 10
 fi(n) = 80
 
 e random number coprime with fi(n)
-1 < e < fi(n) - 1
+1 < e < fi(n)
 Here we take into account only e != d
 e = 77
 
