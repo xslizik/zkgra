@@ -21,7 +21,8 @@ fi(n) = 4 x 6
 fi(n) = 24
 
 e random number coprime with fi(n)
-1 < e < fi(n)
+1 < e < fi(n) - 1
+the thing is that there is no such e that would have different d for this excercise, but I will take it nonetheless
 e = 5
 
 e x d = 1 mod fi(n)
