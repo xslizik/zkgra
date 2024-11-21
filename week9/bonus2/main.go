@@ -87,17 +87,17 @@ func main() {
 	rA := modExp(*g, k, *p)
 	fmt.Printf("rA = %d\n", rA)
 
-	// e = H(rA, message)
-	e := generateHashE(rA, *message)
-	fmt.Printf("e = %d\n", e)
+	// eA = H(rA, message)
+	eA := generateHashE(rA, *message)
+	fmt.Printf("eA = %d\n", eA)
 
 	// s = k + x*eA
-	s := (k + x*e)
+	s := (k + x*eA)
 	fmt.Printf("s = %d\n", s)
 
 	fmt.Println("VERIFY AUTHENTICATION")
 	// rB = (g^s * y^eA) mod p
-	rB := (modExp(*g, s, *p) * modExp(y, e, *p)) % *p
+	rB := (modExp(*g, s, *p) * modExp(y, eA, *p)) % *p
 	fmt.Printf("rB = %d\n", rB)
 
 	// eB = H(rB, message)
@@ -105,7 +105,7 @@ func main() {
 	fmt.Printf("eB = %d\n", eB)
 
 	// verify authentication
-	if e == eB {
+	if eA == eB {
 		fmt.Println("Bob verifies Alice's identity\ne == eB")
 	} else {
 		fmt.Println("Bob cannot verify Alice's identity\ne != eB")
