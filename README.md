@@ -10,5 +10,5 @@ A collection of cryptography programs written in [Go](https://go.dev/doc/install
 - [DES - Feistel Grid](./week6/report06.md)
 - [Rijndael algorithm](./week7/report07.md)
 - [RSA](./week8/report08.md)
-
+- [Hash functions, Schnopp's digital signature algorithm](./week9/report09.md)
 
