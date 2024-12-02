@@ -5,14 +5,11 @@ import (
 	"sort"
 )
 
-// createTable constructs the table based on the provided probabilities
 func createTable(probabilities []float64) [][]float64 {
 	var table [][]float64
 
-	// Sort the initial probabilities (descending order)
 	sort.Sort(sort.Reverse(sort.Float64Slice(probabilities)))
 
-	// Add the first column to the table
 	table = append(table, append([]float64(nil), probabilities...))
 
 	// Iterate until the sum of probabilities is 1
@@ -37,7 +34,6 @@ func createTable(probabilities []float64) [][]float64 {
 	return table
 }
 
-// printTable prints the generated table
 func printTable(table [][]float64) {
 	for i, row := range table {
 		fmt.Printf("Column %d: ", i+1)
@@ -49,12 +45,8 @@ func printTable(table [][]float64) {
 }
 
 func main() {
-	// Example probabilities
 	probabilities := []float64{0.25, 0.20, 0.18, 0.15, 0.10, 0.08, 0.03, 0.01}
 
-	// Generate the table
 	table := createTable(probabilities)
-
-	// Print the table
 	printTable(table)
 }
