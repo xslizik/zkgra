@@ -12,3 +12,4 @@ A collection of cryptography programs written in [Go](https://go.dev/doc/install
 - [RSA](./week8/report08.md)
 - [Hash functions, Schnopp's digital signature algorithm](./week9/report09.md)
 - [Redundant and Non-redundant codes](./week10/report10.md)
+- [Digital Signatures and Cryptoanalysis](./week11/report11.md)
